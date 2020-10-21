@@ -20,6 +20,7 @@ header {
     text-align: center;
 }
 .header__validation {
+    @include justify-content-spacearound;
     font-size: 9px;
     line-height: 14px;   
     list-style-type: none;
@@ -27,6 +28,7 @@ header {
 }
 a {
     text-decoration: none;
+    color:$secondarycolor;
 }
 .main_h2, .main__text {
     text-align: center;
@@ -51,21 +53,78 @@ h2 {
 }
 .text_produit_p {
     text-align: justify;
-    margin: 3%;
 }
 
-#prix, button {
+#prix, button, .text_produit_p, .main__text {
     margin: 3%;
 }
 footer {
-    @include flexbox-column;
-    justify-content: space-around;
+    @include justify-content-spacearound;
     margin-left: 3px;
     background-color: $primarycolor;
-    height: 60px;
 }
-.text {
+footer .text {
     text-decoration: none;
     color: $secondarycolor;
     font-family: $fonttext;
+    margin: 3%;
+}
+/*=====media queries min-width:600px page index=======*/
+@media screen and (min-width:600px)
+{
+    .header__logo{
+        width: 18%;
+    }
+    .header__h1 {
+        font: xx-large;
+    }
+    .header__validation{
+        font-size: 19px;
+    }
+}
+/*=====media queries min-width:900px page index=======*/
+@media screen and (min-width:900px)
+{
+    header {
+        @include justify-content-spacearound;
+    }
+    .header__logo{
+        height: 77px;
+        margin-left: -7%;
+    }
+    .header__h1{
+        font-size: xx-large;
+    }
+    .header__validation {
+        @include flexbox-column;
+        margin-top: 2%;
+        font-size: 19px;
+        
+    }
+    .main_h2{
+        font-size: 21px;
+    }
+    .produit{
+       @include flex-row-wrap-wrap;
+       justify-content: center;
+    }
+    figure {
+        width: 38%;
+    }
+}
+/*=====media queries min-width:1200px page index=======*/
+@media screen and (min-width:1200px)
+{
+    .header__validation {
+        margin-top: 1%;
+    }
+    .header__h1{
+        padding-right: 7%;
+    }
+    figure {
+        width: 18%;
+    }
+    footer .text{
+        font-size: 21px;
+    }
 }

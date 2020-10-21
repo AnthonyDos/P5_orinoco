@@ -2,3 +2,12 @@
     display: flex;
     flex-direction: column;
 }
+@mixin justify-content-spacearound {
+    display: flex;
+    justify-content: space-around;
+}
+@mixin flex-row-wrap-wrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
