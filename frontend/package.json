@@ -1,0 +1,11 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "frontend projet Orinoco",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch C:/Users/dossa/Documents/ProjetOpenclassrooms/projet_5/frontend/style.scss:C:/Users/dossa/Documents/ProjetOpenclassrooms/projet_5/frontend/style.css"
+  },
+  "author": "Dos santos Anthony",
+  "license": "ISC"
+}
