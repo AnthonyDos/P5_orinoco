@@ -41,7 +41,8 @@ a {
   width: 96%;
   border-radius: 15px 15px 0 0;
   padding: 2%;
-  margin: auto; }
+  margin: auto;
+  height: 26%; }
 
 figure {
   background-color: #f3e9f1;
@@ -107,7 +108,7 @@ footer .text {
     justify-content: center; }
 
   figure {
-    width: 38%; } }
+    width: 24%; } }
 /*=====media queries min-width:1200px page index=======*/
 @media screen and (min-width: 1200px) {
   .header__validation {
@@ -117,7 +118,7 @@ footer .text {
     padding-right: 7%; }
 
   figure {
-    width: 18%; }
+    width: 13%; }
 
   footer .text {
     font-size: 21px; } }
