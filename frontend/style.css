@@ -32,29 +32,31 @@ a {
   text-align: center;
   font-size: 14px; }
 
-.produit {
+#produit {
   display: flex;
   flex-direction: column;
   width: 100%; }
 
-.imagescamera {
+.images {
   width: 96%;
   border-radius: 15px 15px 0 0;
   padding: 2%;
   margin: auto;
   height: 26%; }
 
-figure {
+.cameras {
   background-color: #f3e9f1;
   border-radius: 15px; }
 
 h2 {
   margin-left: 3%; }
 
-.text_produit_p {
-  text-align: justify; }
+.description, #price, .main__text {
+  text-align: justify;
+  margin: 3%; }
 
-#prix, button, .text_produit_p, .main__text {
+figcaption, button {
+  text-align: center;
   margin: 3%; }
 
 footer {
@@ -101,13 +103,13 @@ footer .text {
   .main_h2 {
     font-size: 21px; }
 
-  .produit {
+  #produit {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center; }
 
-  figure {
+  .cameras {
     width: 24%; } }
 /*=====media queries min-width:1200px page index=======*/
 @media screen and (min-width: 1200px) {
@@ -117,7 +119,7 @@ footer .text {
   .header__h1 {
     padding-right: 7%; }
 
-  figure {
+  .cameras {
     width: 13%; }
 
   footer .text {
