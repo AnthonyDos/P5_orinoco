@@ -65,7 +65,8 @@ fetch ("http://localhost:3000/api/cameras/" + getId())
 	optionLabel.textContent = 'Choix' + ' ';
 	price.textContent = 'Prix:'+ ' '+cameras.price / 100 + '€';
 	buttonReturn.innerHTML =`<button><a  class="liens" href="index.html" >Retour</a></button>` 
-	buttonAdd.innerHTML =`<button><a  class="liens" href="panier.html" >Ajouter</a></button>`
+	buttonAdd.innerHTML =`<button ><a  class="liens" href="panier.html" >Ajouter</a></button>`
+	
 		
 	//attributs
 	cameraImage.setAttribute('alt', 'appareil photo');
@@ -104,30 +105,37 @@ fetch ("http://localhost:3000/api/cameras/" + getId())
 		optionSelect[i].id = ('value', cameras.lenses.value) 
 		
 		//ajout au panier
-		buttonAdd.onclick =
-			function  (){
+		
+		
+		buttonAdd.onclick = 
+			function (){
 				//j'impose une condition de sélectionner une quantité
-				if( cameraQuantityInput.value == 0 ){
-					alert('Veuillez sélectionner une quantité');
+				
+				if (cameraQuantityInput.value == 0 ){
+					alert('Veuillez sélectionner une quantité')
+					
 				}else{
 				//si la condition est respectée 
-				price.textContent = ((cameras.price / 100) * (+cameraQuantityInput.value)) + '€'
-				let camerasOption = {
-					id : cameras._id,
-					name : cameras.name,
-					price : cameras.price/100,
-					description : cameras.description,
-					image : cameras.imageUrl,
-					optionSelect: cameras.lenses,	
+					
+					price.textContent = ((cameras.price / 100) * (+cameraQuantityInput.value)) + '€'
+					let camerasBasket = {
+						id : cameras._id,
+						name : cameras.name,
+						price : cameras.price/100,
+						description : cameras.description,
+						imageUrl : cameras.imageUrl,
+						optionSelect: optionSelect.value,	
+						qty : cameraQuantityInput.value
+						
 				}
 				//affiche dans le local storage
-				let objectifOption = JSON.stringify(camerasOption);
+				let objectifOption = JSON.stringify(camerasBasket);
 				localStorage.setItem(cameras._id, objectifOption);
 				const lenses = document.getElementsByTagName('select')
 		
 				//let buttonAdd = JSON.parse(localStorage.getItem('cameras'))
 				//alert("ajouté au panier")
-				alert (cameraQuantityInput.value + " " + cameras.name + ' ' + optionSelect.value + ' ajouté au panier')
+				alert  (cameraQuantityInput.value + " " + cameras.name + ' ' + optionSelect.value + ' ajouté au panier')
 			}	
 		}
 	}		
