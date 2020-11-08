@@ -124,5 +124,88 @@ footer .text {
 
   footer .text {
     font-size: 21px; } }
+/*================feuille de style page produit========================*/
+/*=======mobil-first min-width:300px========*/
+.bloc_camera {
+  margin: 8%;
+  padding: 0 7%;
+  border: 2px solid #ddc2d7;
+  box-shadow: 8px 8px #ddc2d7; }
+
+.bloc_camera_title, .button {
+  text-align: center;
+  font-family: "sans-serif"; }
+
+.camera_photo {
+  width: 100%; }
+
+.bloc_camera_description {
+  text-align: justify;
+  font-family: "sans-serif"; }
+
+select, .quantity_input {
+  border-color: #ddc2d7; }
+
+.quantity_input {
+  width: 20%; }
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+/*==========media queries 900px===========*/
+@media screen and (min-width: 900px) {
+  .bloc_camera {
+    width: 50%;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 10%; } }
+/*===============media queries 1200px=========*/
+@media screen and (min-width: 1200px) {
+  #cameras {
+    width: 50%;
+    margin: auto; }
+
+  .bloc_camera {
+    width: 30%; } }
+/*=====================style page panier==============================*/
+/*======media queria min-width 250px=====*/
+@media screen and (min-width: 250px) {
+  #camerasCard, .container_basket_img, .container_basket_title {
+    width: 100%; }
+
+  #main_basket, #total {
+    border: 4px solid #ddc2d7; }
+
+  #main_basket {
+    width: 80%;
+    margin: auto; }
+
+  .container_basket_img {
+    margin-bottom: 0; }
+
+  .container_basket_title, .container_basket_total_product, #total, #form {
+    font-family: "sans-serif"; }
+
+  .container_basket_title {
+    background-color: #ddc2d7;
+    margin: -1% 0; }
+
+  .container_basket_total_product {
+    background-color: #ddc2d7;
+    margin: 8%; }
+
+  #total {
+    background-color: #ddc2d7;
+    margin: auto;
+    width: 80%; }
+
+  .container_basket_title, #total_p, .container_basket_total_product, #form {
+    text-align: center; }
+
+  .main_form {
+    background-color: #f3e9f1;
+    border: 2px solid #f3e9f1; } }
 
 /*# sourceMappingURL=style.css.map */

@@ -19,7 +19,7 @@ fetch('http://localhost:3000/api/cameras')
     </figcaption>`
     cameras[i].setAttribute("data-id", data[i]._id) 
   }        
-})
+}) 
 .catch(function(err) {
   console.log('Fetch Error ', error);
 });

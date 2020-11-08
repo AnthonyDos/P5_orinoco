@@ -1,3 +1,10 @@
+Partie frontend
+1-utilisation de sass pour les mixins et les variables
+    -lancer sass = npm run sass
+
+
+
+Partie backend
 # Orinoco #
 
 This is the back end server for Project 5 of the Junior Web Developer path.

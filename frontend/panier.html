@@ -1,13 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="robots" content="index, follow">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/cf7cad016f.js" crossorigin="anonymous"></script>
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://kit.fontawesome.com/cf7cad016f.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+  <title>Panier</title>
 </head>
-<body>
-    
-</body>
+  <body>
+    <header>
+      <div class="header__retour">
+        <img class="header__logo" src="images/logo.png" alt="logo Orinoco">
+        <a class="header__retour__arrow" href="index.html"><i class="far fa-arrow-circle-left"></i></a>
+      </div>
+      <h1 class="header__h1">Bienvenue sur Orinoco</h1>
+      <ul class="header__validation">
+        <li><a class="header__validation_commande" href="confirmation_de_commande.html"></i>Commandes</a></li>
+        <li><a class="header__validation_panier" href="panier.html"><i class="fas fa-shopping-cart"></i>&nbsp; Panier</a></li>
+      </ul>
+    </header>
+    <main id="main_basket">
+      <div id="camerasCard">    
+      </div>  
+    </main>
+    <!-- <div id="remove_basket">
+      <i class="far fa-trash-alt">Vider le panier</i>
+    </div> -->
+    <div id="total">
+      <div id="total_p"></div>
+    </div>
+    <p id="identity">Veuillez entrer vos coordonnées pour valider votre panier.</p>
+    <div class="main_form">
+      <form id="form">
+        <input type="text" name="last_name" placeholder="Nom" id="last_name" required><br>
+        <input type="text" name="first_name" placeholder="Prénom" id="first_name" required><br>
+        <input type="text" name="adresse" placeholder="adresse" id="adress" required><br>
+        <input type="text" name="ville" placeholder="ville" id="city"required><br>
+        <input type="email" name="email" placeholder="E-mail" id="mail" required><br>
+        <input type="submit" value="Envoyer" id="btn_send" >
+        <a id="return_button"></a>
+      </form>
+    </div>
+    <p id="error"></p>
+    <footer>
+      <a class="text" href="#">À propose de nous</a>
+      <a class="text" href="#">Contactez-nous</a>
+    </footer>
+    <script src="js/panier.js"></script>
+	</body>
 </html>

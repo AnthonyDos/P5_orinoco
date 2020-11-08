@@ -108,7 +108,7 @@ fetch ("http://localhost:3000/api/cameras/" + getId())
 		
 		
 		buttonAdd.onclick = 
-			function (){
+		function (){
 				//j'impose une condition de sélectionner une quantité
 				
 				if (cameraQuantityInput.value == 0 ){
