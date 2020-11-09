@@ -205,6 +205,9 @@ select,  .quantity_input {
         background-color: $color_bloc_product;
         margin: -1% 0;   
     }
+    .container_basket_objectif, .container_basket_quantity {
+        margin-left: 9%;
+    }
     .container_basket_total_product {
         background-color: $color_bloc_product;
         margin: 8%;
@@ -214,7 +217,7 @@ select,  .quantity_input {
         margin: auto;
         width: 80%;   
     }
-    .container_basket_title, #total_p, .container_basket_total_product,  #form {
+    .container_basket_title, #total_p, .container_basket_total_product,  #form, #identity{
         text-align: center;
     }
     .main_form {
@@ -222,7 +225,27 @@ select,  .quantity_input {
         border: 2px solid $primarycolor;
     }
     
-  }
-  
-  
+}
+ /*======media queria min-width 600px=====*/
+@media screen and (min-width: 600px) {
+    #main_basket, #total {
+        width: 50%;
+    }
+    #btn_send {
+        margin-left: 3%;
+    }
+}
+/*======media queria min-width 1200px=====*/
+@media screen and (min-width: 1200px) {
+    #camerasCard {
+        display: flex;
+    }
+    .container_basket_img {
+        max-width: 100%;
+        height: 100px;
+    }
+    .container_basket_total_product {
+        width: 77%;
+    }
+}
   
