@@ -1,6 +1,7 @@
 Partie frontend
 1-utilisation de sass pour les mixins et les variables
     -lancer sass = npm run sass
+    -il faut une connexion internet afin que les icônes s'affiches
 
 
 
