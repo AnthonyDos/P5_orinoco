@@ -137,50 +137,41 @@ footer .text {
   footer .text {
     font-size: 21px; } }
 /*================feuille de style page produit========================*/
-/*=======mobil-first min-width:300px========*/
-.bloc_camera {
-  margin: 8%;
-  padding: 0 7%;
-  border: 2px solid #ddc2d7;
-  box-shadow: 8px 8px #ddc2d7; }
-
-.bloc_camera_title, .button {
-  text-align: center;
-  font-family: "sans-serif"; }
-
-.camera_photo {
-  width: 100%; }
-
-.bloc_camera_description {
-  text-align: justify;
-  font-family: "sans-serif"; }
-
-select, .quantity_input {
-  border-color: #ddc2d7; }
-
-.quantity_input {
-  width: 20%; }
-
-.button {
-  display: flex;
-  align-items: center;
-  justify-content: center; }
-
-/*==========media queries 900px===========*/
-@media screen and (min-width: 900px) {
-  .bloc_camera {
-    width: 50%;
-    margin: auto;
-    margin-top: 5%;
-    margin-bottom: 10%; } }
-/*===============media queries 1200px=========*/
-@media screen and (min-width: 1200px) {
+/*=======mobil-first min-width:250px========*/
+@media screen and (min-width: 250px) {
   #cameras {
-    width: 50%;
+    width: 100%; }
+
+  .divProducts {
+    width: 90%;
+    margin: auto;
+    background-color: #f3e9f1; }
+
+  .divImg {
+    width: 90%;
     margin: auto; }
 
-  .bloc_camera {
-    width: 30%; } }
+  .imgProducts {
+    margin-top: 6%;
+    width: 100%; }
+
+  .h2Products, .divBtn {
+    text-align: center; }
+
+  .blocProduct {
+    margin: 7%; }
+
+  .textProduct {
+    text-align: justify; } }
+/*==========media queries 900px===========*/
+@media screen and (min-width: 900px) {
+  .divProducts {
+    margin-top: 4%;
+    width: 55%; } }
+/*===============media queries 1200px=========*/
+@media screen and (min-width: 1500px) {
+  .divProducts {
+    width: 35%; } }
 /*=====================style page panier==============================*/
 /*======media queria min-width 250px=====*/
 @media screen and (min-width: 250px) {
@@ -188,8 +179,13 @@ select, .quantity_input {
     margin: 0;
     padding: 0; }
 
-  #camerasCard, .container_basket_img, .container_basket_title {
-    width: 100%; }
+  #main_basket {
+    width: 80%; }
+
+  #camerasCard, .imgBasket {
+    width: 100%;
+    display: flex;
+    flex-direction: column; }
 
   #main_basket, #total {
     border: 4px solid #ddc2d7; }
