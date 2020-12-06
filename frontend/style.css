@@ -1,7 +1,9 @@
+html, body {
+  height: 100%; }
+
 body {
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   font-family: "sans-serif"; }
 
 header {
@@ -29,6 +31,9 @@ header {
 a {
   text-decoration: none;
   color: black; }
+
+.main {
+  flex: 1 0 auto; }
 
 .main_h2, .main__text {
   text-align: center;
@@ -71,8 +76,7 @@ footer {
   justify-content: space-around;
   margin-left: 3px;
   background-color: #f3e9f1;
-  position: relative;
-  bottom: -9px; }
+  flex-shrink: 0; }
 
 footer .text {
   text-decoration: none;
@@ -137,32 +141,34 @@ footer .text {
   footer .text {
     font-size: 21px; } }
 /*================feuille de style page produit========================*/
-/*=======mobil-first min-width:250px========*/
-@media screen and (min-width: 250px) {
-  #cameras {
-    width: 100%; }
+main {
+  flex: 1 0 auto; }
 
-  .divProducts {
-    width: 90%;
-    margin: auto;
-    background-color: #f3e9f1; }
+#cameras {
+  width: 100%; }
 
-  .divImg {
-    width: 90%;
-    margin: auto; }
+.divProducts {
+  width: 90%;
+  margin: auto;
+  background-color: #f3e9f1; }
 
-  .imgProducts {
-    margin-top: 6%;
-    width: 100%; }
+.divImg {
+  width: 90%;
+  margin: auto; }
 
-  .h2Products, .divBtn {
-    text-align: center; }
+.imgProducts {
+  margin-top: 6%;
+  width: 100%; }
 
-  .blocProduct {
-    margin: 7%; }
+.h2Products, .divBtn {
+  text-align: center; }
 
-  .textProduct {
-    text-align: justify; } }
+.blocProduct {
+  margin: 7%; }
+
+.textProduct {
+  text-align: justify; }
+
 /*==========media queries 900px===========*/
 @media screen and (min-width: 900px) {
   .divProducts {
@@ -265,5 +271,28 @@ footer .text {
 
   .container_basket_total_product {
     width: 77%; } }
+/*=======mobil-first min-width:250px========*/
+#command {
+  margin: 5%; }
+
+.div_confirmation {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 90%;
+  border: 2px solid #ddc2d7;
+  padding: 7px;
+  background-color: #f3e9f1; }
+
+.h2_thanks {
+  text-align: justify; }
+
+/*======media queria min-width 900px=====*/
+@media screen and (min-width: 900px) {
+  .h2_thanks {
+    text-align: center; }
+
+  .div_confirmation {
+    width: 63%; } }
 
 /*# sourceMappingURL=style.css.map */

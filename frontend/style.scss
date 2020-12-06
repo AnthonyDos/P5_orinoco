@@ -1,15 +1,13 @@
 
 @import "utils/_variables";
 @import "utils/mixins";
-
+html, body{
+    height: 100%;
+}
 body {
-    margin: 0;
-  padding: 0;
-  min-height: 100vh;
-
-
-    font-family: $fonttext;
-    
+    display: flex;
+    flex-direction: column;
+    font-family: $fonttext;  
 }
 header { 
     width: 100%;
@@ -35,6 +33,9 @@ header {
 a {
     text-decoration: none;
     color:$secondarycolor;
+}
+.main {
+    flex: 1 0 auto;
 }
 .main_h2, .main__text {
     text-align: center;
@@ -75,8 +76,7 @@ footer {
     @include justify-content-spacearound;
     margin-left: 3px;
     background-color: $primarycolor;
-    position: relative;
-    bottom: -9px;
+    flex-shrink: 0;
 }
 footer .text {
     text-decoration: none;
@@ -113,8 +113,7 @@ footer .text {
     .header__validation {
         @include flexbox-column;
         margin-top: 2%;
-        font-size: 19px;
-        
+        font-size: 19px;  
     }
     .main_h2{
         font-size: 21px;
@@ -146,37 +145,36 @@ footer .text {
         font-size: 21px;
     }
 }
-
 /*================feuille de style page produit========================*/
-/*=======mobil-first min-width:250px========*/
-@media screen and (min-width: 250px) {
-    #cameras {
-        width: 100%;
-    }
-    .divProducts {
+ /////////////////// min-width 250 px  ///////////////////
+main{
+    flex: 1 0 auto;
+}
+#cameras {
+     width: 100%;
+}
+.divProducts {
         width: 90%;
         margin: auto;
         background-color: $primarycolor;
-    }
-    .divImg {
+}
+.divImg {
         width: 90%;
         margin: auto;
-    }
-    .imgProducts {
+}
+.imgProducts {
         margin-top: 6%;
         width: 100%;
-    }
-    .h2Products , .divBtn {
-        text-align: center;
-    }
-    .blocProduct {
-        margin: 7%;
-    }
-    .textProduct {
-        text-align: justify;
-    }
 }
-
+.h2Products , .divBtn {
+        text-align: center;
+}
+.blocProduct {
+        margin: 7%;
+}
+.textProduct {
+        text-align: justify;
+}
 /*==========media queries 900px===========*/
 @media screen and (min-width:900px) {
     .divProducts {
@@ -291,4 +289,28 @@ footer .text {
         width: 77%;
     }
 }
-  
+/////////////////////////////////feuille de style page confirmation///////////////////////////////////
+ /*=======mobil-first min-width:250px========*/
+ #command {
+    margin: 5%;
+ }
+.div_confirmation {
+    @include flexbox-column;
+    margin: auto;
+    width: 90%;
+    border: 2px solid $color_bloc_product;
+    padding: 7px;
+    background-color: $primarycolor;
+}
+ .h2_thanks {
+    text-align: justify;
+}
+/*======media queria min-width 900px=====*/
+@media screen and (min-width: 900px) {
+    .h2_thanks {
+        text-align: center;
+    }
+    .div_confirmation {
+        width: 63%;
+    }
+}
