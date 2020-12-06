@@ -18,6 +18,7 @@ fetch('http://localhost:3000/api/cameras')
       <button><a  class="liens" href="produit.html?id=${data[i]._id}" >Aperçu</a></button>
     </figcaption>`
     cameras[i].setAttribute("data-id", data[i]._id) 
+    
   }        
 }) 
 .catch(function(err) {
