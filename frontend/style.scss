@@ -91,7 +91,7 @@ footer .text {
         width: 18%;
     }
     .header__h1 {
-        font: xx-large;
+        font-weight: xx-large;
     }
     .header__validation{
         font-size: 19px;
@@ -151,34 +151,35 @@ main{
     flex: 1 0 auto;
 }
 #cameras {
-     width: 100%;
+    width: 100%;
 }
 .divProducts {
-        width: 90%;
-        margin: auto;
-        background-color: $primarycolor;
+    width: 90%;
+    margin: auto;
+    background-color: $primarycolor;
+    box-shadow: 10px 10px $color_bloc_product;
+    margin-top: 4%;
 }
 .divImg {
-        width: 90%;
-        margin: auto;
+    width: 90%;
+    margin: auto;
 }
 .imgProducts {
-        margin-top: 6%;
-        width: 100%;
+    margin-top: 6%;
+    width: 100%;
 }
 .h2Products , .divBtn {
-        text-align: center;
+    text-align: center;
 }
 .blocProduct {
-        margin: 7%;
+    margin: 7%;
 }
 .textProduct {
-        text-align: justify;
+    text-align: justify;
 }
 /*==========media queries 900px===========*/
 @media screen and (min-width:900px) {
     .divProducts {
-        margin-top: 4%;
         width: 55%;
     } 
 }
