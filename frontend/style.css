@@ -58,11 +58,11 @@ a {
 h2 {
   margin-left: 3%; }
 
-.description, #price, .main__text {
+.description, .price, .main__text {
   text-align: justify;
   margin: 3%; }
 
-figcaption, button {
+.button {
   text-align: center;
   margin: 3%; }
 
@@ -120,7 +120,7 @@ footer .text {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center; }
+    justify-content: space-around; }
 
   .cameras {
     width: 24%; } }
@@ -171,10 +171,16 @@ main {
 .textProduct {
   text-align: justify; }
 
+.quantity_input {
+  width: 10%; }
+
 /*==========media queries 900px===========*/
 @media screen and (min-width: 900px) {
   .divProducts {
-    width: 55%; } }
+    width: 55%; }
+
+  .quantity_input {
+    width: 5%; } }
 /*===============media queries 1200px=========*/
 @media screen and (min-width: 1500px) {
   .divProducts {
@@ -252,7 +258,7 @@ main {
     width: 50%; }
 
   #btn_send {
-    margin-left: 3%; } }
+    margin-top: 2%; } }
 /*======media queria min-width 1200px=====*/
 @media screen and (min-width: 1200px) {
   #main_basket {
