@@ -2,10 +2,10 @@ let container = document.getElementById("main_command");
 //=========================================================
 //Récupération localstorage
 let commande =  Object.keys(localStorage);
-console.log(commande)
+//console.log(commande)
 //===================================================================
-for (i=0; i < commande.length; i++) {
-  let infoCommand = JSON.parse(localStorage.getItem(commande[i]))
+for (i=0; i < commande.length; i++){
+  let infoCommand = JSON.parse(localStorage.getItem(commande))
   console.log(infoCommand)
   //===================================================================
   let divConfirmation = document.createElement("div");
@@ -16,6 +16,7 @@ for (i=0; i < commande.length; i++) {
   divConfirmation.appendChild(thanks);
   thanks.className ="h2_thanks";
   thanks.textContent = `Confirmation de votre commande ${infoCommand.nameConfirmation}, merci pour votre achat!`;
+  console.log(thanks)
   //==============================================================================================================
   let info = document.createElement("h3");
   divConfirmation.appendChild(info);
@@ -31,7 +32,7 @@ for (i=0; i < commande.length; i++) {
   let price = document.createElement("p");
   divConfirmation.appendChild(price);
   price.innerHTML = `Prix total de la commande : ${infoCommand.totalPriceBasket} €`;
-  price.className ="price";
+  price.className ="priceConfirmation";
   console.log(price)  
 }
 //======================

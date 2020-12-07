@@ -76,7 +76,7 @@ fetch ("http://localhost:3000/api/cameras/" + getId())
         //===========================================================
         const priceProduct = document.createElement('p');
         priceDiv.appendChild(priceProduct);
-        priceProduct.textContent = 'Prix:'+' '+ appareilphoto.price /100 + " "+ "€";
+        priceProduct.textContent = `Prix : ${appareilphoto.price/100} €`;
         priceProduct.className = 'priceProduct';
         //==========================================================================
         const divBtn = document.createElement('div');
@@ -110,8 +110,8 @@ fetch ("http://localhost:3000/api/cameras/" + getId())
                 alert('Veuillez sélectionner une quantité')
                 e.preventDefault();           
             }else{
-                //si la condition est respectée  
-                priceProduct.textContent = ((cameras.price / 100) * (+camerasQuantityInput.value)) + '€'
+                //si la condition est respectée
+                priceProduct.textContent = ((cameras.price / 100) * (+camerasQuantityInput.value)) + '€';
                 //=========================================================================================
                 let camerasBasket = {
                     id : cameras._id,
@@ -120,7 +120,7 @@ fetch ("http://localhost:3000/api/cameras/" + getId())
                     description : cameras.description,
                     imageUrl : cameras.imageUrl,
                     optionSelect: optionSelect.value,	
-                    qty : camerasQuantityInput.value
+                    qty : camerasQuantityInput.value 
                 }    
                 //=====================================================
                 //affiche dans le local storage
@@ -128,7 +128,7 @@ fetch ("http://localhost:3000/api/cameras/" + getId())
                 localStorage.setItem(cameras._id, objectifOption);
                 const lenses = document.getElementsByTagName('select')
                 buttonSend = JSON.parse(localStorage.getItem('cameras'))
-                alert  (camerasQuantityInput.value + " " + appareilphoto.name + ' ' + optionSelect.value + ' ajouté au panier')
+                alert (`${camerasQuantityInput.value} ${ appareilphoto.name} ${optionSelect.value} ajouté au panier `);
             }  
         }
     }

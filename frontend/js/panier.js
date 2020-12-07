@@ -78,10 +78,8 @@ totalPriceBasket.className = 'totalPriceBasket';
 totalPriceBasket.innerHTML = `Prix total de votre panier : ${totalBasketProduct} €`;
 totalP.appendChild(totalPriceBasket)
 //console.log(totalPriceBasket) 
-//======================================================================================     
-let returnButton = document.getElementById('return_button')
-returnButton =`<a  class="liens" href="index.html" >Retour</a>` 
-btn_send = `<button><a class='lien' href="confirmation.html"></a></button>`
+//======================================================================================    
+btn_send = `<button><a class='lien' href="confirmation.html"></a></button>`;
 console.log(btn_send)
 //=======================================================================================
 class Client {
@@ -134,7 +132,7 @@ form.addEventListener('submit',(e) =>{
     let  contact =  {
         firstName : newClient.firstName,
         lastName : newClient.lastName,
-       address : newClient.address,
+        address : newClient.address,
         city : newClient.city,
         email : newClient.email,
     }

@@ -1,7 +1,6 @@
 //section divs , je récupére la div pour incorporer mes éléments de la caméra
 let container = document.getElementById("produit");
-
-
+//=================================================================================
 //requête fetch
 fetch('http://localhost:3000/api/cameras') 
   .then(function(response){                   //je récupére les données de l'api
@@ -9,10 +8,11 @@ fetch('http://localhost:3000/api/cameras')
   }).then (function (data) {
   //console.log(data)
   for(let i = 0; i <data.length; i++){         // je fais une boucle pour récupéré toutes les caméras du tableau
+    //============================================================
     const cameras = document.createElement('div');
     container.appendChild(cameras);
     cameras.className = ('cameras')
-
+    //============================================================
     function afficherLesImages(camerasInfo){
       const imagesCam = document.createElement('img');
       cameras.appendChild(imagesCam);
@@ -22,18 +22,18 @@ fetch('http://localhost:3000/api/cameras')
       console.log(imagesCam)
     }
     afficherLesImages(data)
-
+    //================================================================
     const textProducts = document.createElement('div');
     cameras.appendChild(textProducts);
     textProducts.className = 'text_produit';
-
+    //================================================================
     function afficherLesNoms(camerasInfo){
       const name = document.createElement('h2');
       textProducts.appendChild(name);
       name.textContent = camerasInfo[i].name;
     }
     afficherLesNoms(data)
-
+    //================================================================
     function descriptionCameras(camerasInfo){
       const infoCamera = document.createElement('p');
       textProducts.appendChild(infoCamera);
@@ -41,7 +41,7 @@ fetch('http://localhost:3000/api/cameras')
       infoCamera.className = 'description'
     }
     descriptionCameras(data);
-
+    //================================================================
     function priceCamera(camerasInfo){
       const price = document.createElement('p');
       textProducts.appendChild(price);
@@ -49,8 +49,8 @@ fetch('http://localhost:3000/api/cameras')
       price.className = 'price';  
     }
     priceCamera(data);
-
-    function buttonId (camerasInfo){
+    //================================================================
+    function buttonId (){
       const buttonInfo = document.createElement('button');
       textProducts.appendChild(buttonInfo);
       buttonInfo.className = "button";
