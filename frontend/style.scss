@@ -91,7 +91,7 @@ footer .text {
         width: 18%;
     }
     .header__h1 {
-        font-weight: xx-large;
+        font-size: xx-large;
     }
     .header__validation{
         font-size: 19px;
@@ -264,7 +264,6 @@ main{
         background-color: $primarycolor;
         border: 2px solid $primarycolor;
     }
-    
 }
  /*======media queria min-width 600px=====*/
 @media screen and (min-width: 600px) {
