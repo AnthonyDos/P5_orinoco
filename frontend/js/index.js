@@ -3,60 +3,61 @@ let container = document.getElementById("produit");
 //=================================================================================
 //requête fetch
 fetch('http://localhost:3000/api/cameras') 
-  .then(function(response){                   //je récupére les données de l'api
-    return response.json()
-  }).then (function (data) {
-  //console.log(data)
-  for(let i = 0; i <data.length; i++){         // je fais une boucle pour récupéré toutes les caméras du tableau
+.then(function(response){                   //je récupére les données de l'api
+  return response.json()
+})
+.then (function (data) {
+  for(let element of data)  { 
+    console.log(element)     // je fais une boucle pour récupéré toutes les données du tableau
     //============================================================
     const cameras = document.createElement('div');
     container.appendChild(cameras);
     cameras.className = ('cameras')
     //============================================================
-    function afficherLesImages(camerasInfo){
+    function afficherLesImages(element){
       const imagesCam = document.createElement('img');
       cameras.appendChild(imagesCam);
-      imagesCam.src = `${camerasInfo[i].imageUrl} `;
+      imagesCam.src = element.imageUrl;       
       imagesCam.className = 'images';
       imagesCam.setAttribute = alt='caméras'
       console.log(imagesCam)
     }
-    afficherLesImages(data)
+    afficherLesImages(element)
     //================================================================
     const textProducts = document.createElement('div');
     cameras.appendChild(textProducts);
     textProducts.className = 'text_produit';
     //================================================================
-    function afficherLesNoms(camerasInfo){
+    function afficherLesNoms(element){
       const name = document.createElement('h2');
       textProducts.appendChild(name);
-      name.textContent = camerasInfo[i].name;
+      name.textContent = element.name;
     }
-    afficherLesNoms(data)
+    afficherLesNoms(element)
     //================================================================
-    function descriptionCameras(camerasInfo){
+    function descriptionCameras(element){
       const infoCamera = document.createElement('p');
       textProducts.appendChild(infoCamera);
-      infoCamera.textContent = camerasInfo[i].description;
+      infoCamera.textContent = element.description;
       infoCamera.className = 'description'
     }
-    descriptionCameras(data);
+    descriptionCameras(element);
     //================================================================
-    function priceCamera(camerasInfo){
+    function priceCamera(element){
       const price = document.createElement('p');
       textProducts.appendChild(price);
-      price.textContent = `${camerasInfo[i].price/100} €`;
+      price.textContent = `${element.price/100} €`;
       price.className = 'price';  
     }
-    priceCamera(data);
+    priceCamera(element);
     //================================================================
     function buttonId (){
       const buttonInfo = document.createElement('button');
       textProducts.appendChild(buttonInfo);
       buttonInfo.className = "button";
-      buttonInfo.innerHTML = `<a  class="liens" href="produit.html?id=${data[i]._id}" >Aperçu</a>`
+      buttonInfo.innerHTML = `<a  class="liens" href="produit.html?id=${element._id}" >Aperçu</a>`
     }
-    buttonId(data)  
+    buttonId(element)  
   }       
 }) 
 .catch(function(error) {
