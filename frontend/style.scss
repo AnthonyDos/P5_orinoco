@@ -297,10 +297,11 @@ main{
 }
 /////////////////////////////////feuille de style page confirmation///////////////////////////////////
  /*=======mobil-first min-width:250px========*/
- #command {
-    margin: 5%;
+ #main_command {
+    //margin: 5%;
+    margin-top: 2%;
  }
-.div_confirmation {
+#div_confirmation {
     @include flexbox-column;
     margin: auto;
     width: 90%;
@@ -308,15 +309,15 @@ main{
     padding: 7px;
     background-color: $primarycolor;
 }
- .h2_thanks {
+#h2_thanks {
     text-align: justify;
 }
 /*======media queria min-width 900px=====*/
 @media screen and (min-width: 900px) {
-    .h2_thanks {
+    #h2_thanks {
         text-align: center;
     }
-    .div_confirmation {
+    #div_confirmation {
         width: 63%;
     }
 }

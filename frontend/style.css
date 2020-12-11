@@ -279,10 +279,10 @@ main {
   .container_basket_total_product {
     width: 77%; } }
 /*=======mobil-first min-width:250px========*/
-#command {
-  margin: 5%; }
+#main_command {
+  margin-top: 2%; }
 
-.div_confirmation {
+#div_confirmation {
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -291,15 +291,15 @@ main {
   padding: 7px;
   background-color: #f3e9f1; }
 
-.h2_thanks {
+#h2_thanks {
   text-align: justify; }
 
 /*======media queria min-width 900px=====*/
 @media screen and (min-width: 900px) {
-  .h2_thanks {
+  #h2_thanks {
     text-align: center; }
 
-  .div_confirmation {
+  #div_confirmation {
     width: 63%; } }
 
 /*# sourceMappingURL=style.css.map */
