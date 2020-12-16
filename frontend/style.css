@@ -291,6 +291,9 @@ main {
   padding: 7px;
   background-color: #f3e9f1; }
 
+#commandeNull {
+  text-align: center; }
+
 #h2_thanks {
   text-align: justify; }
 
