@@ -52,22 +52,22 @@ fetch ("http://localhost:3000/api/cameras/" + getId())
     textProduct.className = 'textProduct';
 
     //==================================================
-    const optionLabel = document.createElement('label');
-    blocProduit.appendChild(optionLabel);
-    optionLabel.textContent = 'Choix' + ' ';
-    optionLabel.className = 'optionLabel';
+    const nameOption = document.createElement('p'); 
+    blocProduit.appendChild(nameOption);
+    nameOption.textContent = 'Choix' + ' ';
+    nameOption.className = 'nameOption';
     
 		//====================================================
-		const optionSelect = document.createElement('select');
-    blocProduit.appendChild(optionSelect);
+		const select = document.createElement('select');
+    blocProduit.appendChild(select);
 
     for (let lense of cameras.lenses){
       //console.log(lense)
       let option = document.createElement('option')
-      optionSelect.appendChild(option);
+      select.appendChild(option);
       option.innerHTML = lense;
-      optionSelect.setAttribute('value',lense);
-      optionSelect.id = ('value', cameras.lenses.value);  
+      select.setAttribute('value',lense);
+      select.id = ('value', cameras.lenses.value);  
     }
     //====================================================
     const camerasQuantity = document.createElement('div');
@@ -133,14 +133,14 @@ fetch ("http://localhost:3000/api/cameras/" + getId())
 					price : cameras.price/100,
 					description : cameras.description,
 					imageUrl : cameras.imageUrl,
-					optionSelect: optionSelect.value,	
+					select: select.value,	
 					qty : camerasQuantityInput.value 
 				}    
 				//=====================================================
 				//affiche dans le local storage
 				let objectifOption = JSON.stringify(camerasBasket);
         localStorage.setItem(cameras._id, objectifOption);
-				alert (`${camerasQuantityInput.value} ${ appareilphoto.name} ${optionSelect.value} ajouté au panier `);
+				alert (`${camerasQuantityInput.value} ${ appareilphoto.name} ${select.value} ajouté au panier `);
       }  
     }
   }

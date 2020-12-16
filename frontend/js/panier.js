@@ -4,25 +4,25 @@ let totalP = document.getElementById("total_p");
 let mainBasket = document.getElementById("main_basket")
 
 //===================================================================
-//Création des variables
-let productsId = [];
+//Création de la variable
 let totalBasketProduct = 0 ;
 //======================================================================
 
 //récupération des données stocker dans le localStorage
 let cameraBasket = Object.keys(localStorage) 
-console.log(cameraBasket)
+//console.log(cameraBasket)
 //========================================================
 
-//création d'une fonction pour si le panier est vide
-function recuperationBasket() {
-  if (cameraBasket.length == 0) {
+//création d'une condition pour si le panier est vide
+if (cameraBasket.length == 0) {
     //===============
     let basketEmpty = document.createElement("p");
     mainBasket.appendChild(basketEmpty);
     basketEmpty.className = "basket_empty"
     basketEmpty.innerHTML =`Votre panier est vide. <i class="far fa-frown"></i>`
-  }else{
+}else{
+  function recuperationBasket() {
+    //création d'une boucle pour récupérer les éléments du panier
 		for(let element of cameraBasket){
       console.log(element)
 
@@ -67,22 +67,19 @@ function recuperationBasket() {
       //============================================================================================
       totalBasketProduct = totalBasketProduct + (cameraStorage.price * cameraStorage.qty );
       console.log(totalBasketProduct)
-
-      //=========================================
-      productsId.push(cameraStorage.id)
-      console.log(productsId)
     }
   }
+  recuperationBasket(cameraBasket) 
 }
-recuperationBasket(cameraBasket) 
-//FIN DE LA FONCTION
 
+//FIN DE LA FONCTION
 //==========================================================
 //bouton supprimer les articles
 document.getElementById('remove_basket').addEventListener('click', () => {
   localStorage.clear(); //efface
   location.reload(); //recharge la page
 })
+
 //==========================================================================     
 //afficher le prix total
 let totalPriceBasket = document.createElement("p");
@@ -97,6 +94,20 @@ btn_send = `<button><a class='lien' href="confirmation.html"></a></button>`;
 console.log(btn_send)
 
 //=========================================================================================
+//récupération de l'id produit
+let productsId = [];
+function recupId() {
+  for(let element of cameraBasket){
+    console.log(element)
+    let cameraStorage = JSON.parse(localStorage.getItem(element))
+    console.log(cameraStorage)
+    productsId.push(cameraStorage.id)
+  }
+}
+recupId(cameraBasket)
+console.log(cameraBasket)
+
+//========================================================
 //validation du formulaire
 let form = document.getElementById('form');
 form.addEventListener('submit',(e) =>{
@@ -151,7 +162,7 @@ form.addEventListener('submit',(e) =>{
     body : JSON.stringify(send)
   })  
   //==============================================================
-
+  
   .then(response => response.json())   
   .then(response => {
 		localStorage.clear();
