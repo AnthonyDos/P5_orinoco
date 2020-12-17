@@ -66,8 +66,8 @@ fetch ("http://localhost:3000/api/cameras/" + getId())
       let option = document.createElement('option')
       select.appendChild(option);
       option.innerHTML = lense;
-      select.setAttribute('value',lense);
-      select.id = ('value', cameras.lenses.value);  
+      select.setAttribute('value',cameras.lenses);
+      select.id = ('value', cameras.lenses.value); 
     }
     //====================================================
     const camerasQuantity = document.createElement('div');

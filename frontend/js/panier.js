@@ -47,7 +47,7 @@ if (cameraBasket.length == 0) {
       //============================================================
       const objectifBasket = document.createElement("p");
       basket.appendChild(objectifBasket);
-      objectifBasket.innerHTML = `Objectif : ${cameraStorage.optionSelect}`;
+      objectifBasket.innerHTML = `Objectif : ${cameraStorage.select}`;
       objectifBasket.className = "objectifBasket";
       console.log(objectifBasket)
       //==============================================================

@@ -19,7 +19,6 @@ fetch('http://localhost:3000/api/cameras')
       cameras.appendChild(imagesCam);
       imagesCam.src = element.imageUrl;       
       imagesCam.className = 'images';
-      imagesCam.setAttribute = alt='caméras'
       console.log(imagesCam)
     }
     afficherLesImages(element)
