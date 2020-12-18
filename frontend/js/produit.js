@@ -3,7 +3,7 @@ let cameraContainer = document.getElementById('cameras')
 //récupération de l'id du produit
 function getId(){
 	const param = window.location.search
-	const id = param.replace("?id=","") //récupération de l'id et création d'une constante
+	const id = param.replace("?id=","") //je remplace le document par celui qui est fourni avec l'id produit
 	if (!id) throw new Error ('il manque l\'id')
 	return id
 }
