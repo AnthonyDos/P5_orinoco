@@ -1,11 +1,12 @@
 //Récupération localstorage
-let commande =  Object.keys(localStorage);
-let infoCommand = JSON.parse(localStorage.getItem(commande))
-if (commande == 0){
+let infoCommand = JSON.parse(localStorage.getItem('commande'))
+//si le local storage ne contient aucun article envoyer depuis la page panier alors:
+if(infoCommand == null) {
     let commandeNull = document.getElementById('commandeNull')
     commandeNull.className = "commandeNull"
     commandeNull.innerHTML = "Vous n\' avez pas de commande !"
 }else {
+    //sinon il affiche le numéro de commande 
     let thanks = document.getElementById('h2_thanks')
     thanks.textContent = `Confirmation de votre commande ${infoCommand.nameConfirmation}, merci pour votre achat !`;
 

@@ -96,6 +96,7 @@ console.log(btn_send)
 //=========================================================================================
 //récupération de l'id produit
 let productsId = [];
+console.log(productsId)
 function recupId() {
   for(let element of cameraBasket){
     console.log(element)
@@ -112,7 +113,6 @@ console.log(cameraBasket)
 let form = document.getElementById('form');
 form.addEventListener('submit',(e) =>{
   
-  e.preventDefault();
   //======================================================
 
   //j'initialise l'objet
@@ -137,6 +137,7 @@ form.addEventListener('submit',(e) =>{
   );
 
   //=========================================
+  //création de l'objet 
   let  contact =  {
     firstName : newClient.firstName,
     lastName : newClient.lastName,
@@ -144,9 +145,10 @@ form.addEventListener('submit',(e) =>{
     city : newClient.city,
     email : newClient.email,
   }
-  
+  //si ce n'est pas remplie il ne doit pas validé
+  e.preventDefault();
   //================================================
-  products = productsId;
+  products = productsId
   let send = {
     contact,
     products,
