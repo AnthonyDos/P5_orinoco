@@ -109,43 +109,59 @@ recupId(cameraBasket)
 console.log(cameraBasket)
 
 //========================================================
-//validation du formulaire
+
+class Client {
+  constructor(lastName, firstName, address, city, email){
+    this.lastName = lastName,
+    this.firstName = firstName,
+    this.address = address,
+    this.city = city,
+    this.email = email
+  }  
+}
+//=========================================================================================
 let form = document.getElementById('form');
 form.addEventListener('submit',(e) =>{
+  if (!document.querySelector('#lastName').value.match(/^([a-zA-Zàâäéèêëïîôöùûüç' ]+)$/)){
+    alert('Erreur dans le champs nom !');
+    location.reload();
+  }
+
+  if (!document.querySelector('#firstName').value.match(/^([a-zA-Zàâäéèêëïîôöùûüç' ]+)$/)){
+    alert('Erreur dans le champs prénom ! ');
+    location.reload();
+  } 
+  
+  if(!document.querySelector('#address').value.match(/^([0-9]{1,3}(([,. ]?){1}[a-zA-Zàâäéèêëïîôöùûüç' ]+))$/)){
+      alert('Erreur dans le champs adresse !');
+      location.reload();
+  }
+  if (!document.querySelector('#city').value.match(/^([a-zA-Zàâäéèêëïîôöùûüç' ]+)$/)){
+      alert('Erreur dans le champs ville !');
+      location.reload();
+  }
+  if (!document.querySelector('#email').value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)){
+      alert('Erreur dans le champs email !');
+      location.reload();
+  }
   
   //======================================================
-
-  //j'initialise l'objet
-  class Client {
-    constructor(lastName, firstName, address, city, email){
-      this.lastName = lastName,
-      this.firstName = firstName,
-      this.address = address,
-      this.city = city,
-      this.email = email
-    }  
-  } 
-
-  //===========================================
-  //Je crée une instance
+  
   let newClient =  new Client(
-    document.querySelector("#lastName").value,     
-    document.querySelector("#firstName").value,
-    document.querySelector("#address").value,
-    document.querySelector("#city").value,
-    document.querySelector("#email").value,
+      document.querySelector("#lastName").value,     
+      document.querySelector("#firstName").value,
+      document.querySelector("#address").value,
+      document.querySelector("#city").value,
+      document.querySelector("#email").value,
   );
-
   //=========================================
-  //création de l'objet 
   let  contact =  {
-    firstName : newClient.firstName,
-    lastName : newClient.lastName,
-    address : newClient.address,
-    city : newClient.city,
-    email : newClient.email,
+      firstName : newClient.firstName,
+      lastName : newClient.lastName,
+      address : newClient.address,
+      city : newClient.city,
+      email : newClient.email,
   }
-  //si ce n'est pas remplie il ne doit pas validé
   e.preventDefault();
   //================================================
   products = productsId
